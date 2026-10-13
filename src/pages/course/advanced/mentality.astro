@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CourseSidebar from '../../../components/CourseSidebar.astro';
+---
+
+<BaseLayout title="Mentality & Intent" sidebar>
+  <CourseSidebar slot="sidebar" active="advanced-mentality" />
+
+  <h1>Mentality & Intent — Mental Focus Exercises</h1>
+  <p>Corresponding to Part Three, Chapters 6-7 of "The Way of Energy": Roots and Branches / Going Beyond.
+  Mental focus exercises (mentality exercises) are the advanced dimension of Zhan Zhuang —
+  enhancing the effects of each posture through visualization techniques.</p>
+
+  <h2>Core Mental Imagery System</h2>
+  <p>Lam's system of mental focus centers on a series of "balloon" images that run through all five postures:</p>
+
+  <h3>🎈 Balloon Chair</h3>
+  <ul class="key-points">
+    <li>Imagine a balloon supporting your body from beneath the hips</li>
+    <li>Purpose: Guides pelvic position to achieve "as if sitting, not sitting"</li>
+    <li>Effect: Center of gravity becomes stable, spine naturally straight, tailbone aligned</li>
+  </ul>
+
+  <h3>🎈 Armpit Balloons</h3>
+  <ul class="key-points">
+    <li>Imagine a small balloon under each armpit</li>
+    <li>Purpose: Props the arms open, preventing them from pressing flat against the body</li>
+    <li>Effect: Shoulders sink, elbows drop, energy pathways in the arms open</li>
+  </ul>
+
+  <h3>🎈 Cradling a Ball (Holding the Balloon / Holding at Dantian)</h3>
+  <ul class="key-points">
+    <li>Imagine your arms are cradling a large balloon</li>
+    <li>Don't crush it (too close) or drop it (too far)</li>
+    <li>Purpose: Sets the distance and arc of the arms</li>
+  </ul>
+
+  <h3>🌊 Pressing on Balls (Holding in Front / Splitting Water)</h3>
+  <ul class="key-points">
+    <li>Imagine balloons floating on water beneath your palms</li>
+    <li>Press gently so they don't escape, without using excessive force</li>
+    <li>Purpose: Sets the pressure and direction of the palms</li>
+  </ul>
+
+  <h3>Head Suspended</h3>
+  <ul class="key-points">
+    <li>Imagine the top of your head is floating above your shoulders</li>
+    <li>Purpose: Guides the neck to relax and the spine to elongate</li>
+  </ul>
+
+  <h3>🙂 Keep Smiling</h3>
+  <ul class="key-points">
+    <li>Recall something happy, with a smile at the corners of your mouth and in your heart</li>
+    <li>Purpose: Helps body and mind enter the state of "sung"</li>
+    <li>This is a mental focus technique specifically emphasized by Master Lam in Day 5</li>
+  </ul>
+
+  <h2>Advanced Mental Techniques from the Book (Ch. 6-7)</h2>
+  <p>"The Way of Energy" introduces deeper mental exercises in Part Three:</p>
+  <ul class="key-points">
+    <li><strong>Roots and Branches</strong>: Imagine yourself as a tree — roots sinking into the earth, branches reaching to the sky. Energy rises from the soles of the feet, passes through the torso to the crown, then extends outward through the arms like branches and leaves</li>
+    <li><strong>Going Beyond</strong>: Transcend from physical practice to the level of mental focus. The highest realm lies in the harmonious union of person and nature — "lead the chi with intent; intent has no limits"</li>
+    <li><strong>Water Imagery</strong>: The body is like water — the surface ripples with waves, while the depths remain eternally still</li>
+    <li><strong>Tree Imagery</strong>: Outwardly eternally still, inwardly continuously growing and filling with energy</li>
+  </ul>
+
+  <h2>Layers of Mental Focus</h2>
+  <div class="mermaid">
+    graph TD
+      L1["Layer 1: Physical Form<br/>Align the skeleton, muscles as one"] --> L2["Layer 2: Imagery<br/>Balloon chair, armpit balloons, cradling a ball"]
+      L2 --> L3["Layer 3: Mental Technique<br/>Keep smiling, sung and naturally still"]
+      L3 --> L4["Layer 4: Transcendence<br/>Lead chi with intent, unity of human and nature"]
+      L4 --> L5["Layer 5: Wu Chi<br/>Formless and imageless, intent without limits"]
+  </div>
+
+  <h2>From Stillness to Movement</h2>
+  <p>Zhan Zhuang is not rigid, punishing stillness — it is the vibrant, continuous cultivation of energy.
+  "Sung" and "stillness" must be carried into everyday movement:
+  Zhan Zhuang seeks movement within stillness; testing strength seeks stillness within movement.</p>
+  <table>
+    <tr><th>Practice Form</th><th>Core Principle</th><th>Health Benefits</th></tr>
+    <tr><td>Static standing practice</td><td>Mind concentrated, muscles as one, follow nature</td><td>Nourishes muscles, regulates the nervous system, rests the brain</td></tr>
+    <tr><td>Testing strength (Shi Li)</td><td>Slowly move the upper limbs, feel resistance as if in water</td><td>Extends the "wholeness" gained in stillness into movement</td></tr>
+    <tr><td>Friction stepping (Mo Ca Bu)</td><td>Alternate solid and empty weight, step as if wading through mud</td><td>Draws blood downward, strengthens the legs, improves balance</td></tr>
+  </table>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+  </script>
+</BaseLayout>

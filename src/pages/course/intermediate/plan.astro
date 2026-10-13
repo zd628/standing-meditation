@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CourseSidebar from '../../../components/CourseSidebar.astro';
+---
+
+<BaseLayout title="Intermediate Practice Plan" sidebar>
+  <CourseSidebar slot="sidebar" active="intermediate-plan" />
+
+  <h1>Intermediate Practice Plan</h1>
+  <p>Before entering the Intermediate Course, confirm that you can comfortably hold both Wu Chi and Holding the Balloon for 20 minutes each.</p>
+
+  <h2>Holding in Front Stage (Corresponding to Days 5-6)</h2>
+  <table>
+    <tr><th>Phase</th><th>Posture</th><th>Duration</th><th>Warm-Up</th><th>Cool-Down</th><th>Key Points</th></tr>
+    <tr><td>Weeks 1-2</td><td>Holding in Front</td><td>5-10 minutes</td><td>Knee Rotation + Splitting the Hands</td><td>Hip Rotation</td><td>Adjust to extending arms forward; keep smiling</td></tr>
+    <tr><td>Weeks 3-4</td><td>Holding in Front</td><td>10-15 minutes</td><td>+ Turning and Splitting</td><td>Guiding Down</td><td>Keep weight centered, not leaning forward or back</td></tr>
+    <tr><td>Weeks 5-6</td><td>Holding in Front</td><td>15-20 minutes</td><td>Full set</td><td>Guiding Down</td><td>Move on to Splitting Water once you can hold comfortably</td></tr>
+  </table>
+
+  <h2>Splitting Water Stage (Corresponding to Days 7-8)</h2>
+  <table>
+    <tr><th>Phase</th><th>Posture</th><th>Duration</th><th>Warm-Up</th><th>Cool-Down</th><th>Key Points</th></tr>
+    <tr><td>Weeks 1-2</td><td>Splitting Water</td><td>5-10 minutes</td><td>Knee Rotation + Side Shaking</td><td>Guiding Down</td><td>Hands at the sides, neither forward nor back</td></tr>
+    <tr><td>Weeks 3-4</td><td>Splitting Water</td><td>10-15 minutes</td><td>+ Forward Bend Squat</td><td>Guiding Down</td><td>Absolutely do not shrug the shoulders</td></tr>
+    <tr><td>Weeks 5-6</td><td>Splitting Water</td><td>15-20 minutes</td><td>Full set</td><td>Guiding Down</td><td>Move on to the Advanced Course once you can hold comfortably</td></tr>
+  </table>
+
+  <h2>Daily Practice Recommendations</h2>
+  <ul class="key-points">
+    <li>Practice at a fixed time each day (morning upon waking or before bed is ideal)</li>
+    <li>Each session: 5 minutes warm-up → 10-20 minutes standing → 3 minutes cool-down</li>
+    <li>You may practice the previous posture as a warm-up (e.g., hold Holding the Balloon for 5 minutes, then switch to Holding in Front)</li>
+    <li>Record your daily practice duration and sensations</li>
+    <li>Practice with calming music or in a quiet environment</li>
+  </ul>
+
+  <p style="margin-top: 2rem;">
+    <a href="/course/advanced">→ Proceed to Advanced Course</a>
+  </p>
+</BaseLayout>

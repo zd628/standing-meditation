@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CourseSidebar from '../../../components/CourseSidebar.astro';
+---
+
+<BaseLayout title="Five-Posture Flow" sidebar>
+  <CourseSidebar slot="sidebar" active="advanced-flow" />
+
+  <h1>Five-Posture Flow: Complete Sequence</h1>
+  <p>Once you can comfortably hold all five postures for 20 minutes each, you can attempt the Five-Posture Flow —
+  practicing all five postures in sequence, holding each for 5 minutes, for a total of 25 minutes.
+  This is the ultimate goal presented by Master Lam in Day 10.</p>
+
+  <h2>Complete Sequence</h2>
+  <table>
+    <tr><th>Stage</th><th>Content</th><th>Duration</th></tr>
+    <tr><td>🔥 Warm-up</td><td>Knee Rotation → Swimming on Land → Pushing Up to the Sky → Pulling the Bow → Shaking on the Horse</td><td>5-8 minutes</td></tr>
+    <tr><td>🧍 1. Wu Chi</td><td>Arms hanging down, rooting</td><td>5 minutes</td></tr>
+    <tr><td>🫂 2. Holding the Balloon</td><td>Cradling at heart height</td><td>5 minutes</td></tr>
+    <tr><td>👐 3. Holding in Front</td><td>Extended forward, palms down</td><td>5 minutes</td></tr>
+    <tr><td>🌊 4. Splitting Water</td><td>At the sides, palms down</td><td>5 minutes</td></tr>
+    <tr><td>🧘 5. Holding at Dantian</td><td>Cradling a ball in front of the Dantian</td><td>5 minutes</td></tr>
+    <tr><td>🧘 Cool-down</td><td>Guiding Down → Hip Rotation</td><td>3-5 minutes</td></tr>
+  </table>
+
+  <h2>Energy Flow</h2>
+  <div class="mermaid">
+    graph LR
+      A["Rooting ↓"] -->|Energy rises| B["Cultivating ○"]
+      B -->|Energy guided forward| C["Guiding →"]
+      C -->|Energy expands| D["Expanding ↔"]
+      D -->|Energy returns to source| E["Gathering ◎"]
+      E -.->|Nourishing the whole body| A
+  </div>
+
+  <h2>Key Points for the Five-Posture Flow</h2>
+  <ul class="key-points">
+    <li>Transition smoothly between postures — no pausing, but no rushing either</li>
+    <li>When holding each posture, re-check all key points (feet, knees, body, arms, head, breath)</li>
+    <li>Let your mental focus follow the changing postures — from rooting to cultivating to guiding to expanding to gathering</li>
+    <li>If you feel fatigued, shorten the time in a given posture — do not push yourself</li>
+    <li>The cool-down must not be skipped — guide all energy back to its proper place</li>
+  </ul>
+
+  <div class="callout callout-warn">
+    <h4>⚠️ Safety</h4>
+    <p>The Five-Posture Flow is demanding. If you feel dizzy, overheated, or any discomfort, stop immediately, perform the cool-down, and sit down to rest.</p>
+  </div>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+  </script>
+</BaseLayout>

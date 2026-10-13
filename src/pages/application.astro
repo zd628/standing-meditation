@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CourseSidebar from '../components/CourseSidebar.astro';
+
+const applications = [
+  { scene: 'Walking', icon: '🚶', desc: 'Put your hands in your pockets (thumb outside), keep your shoulders and arms relaxed without deliberate tension, and walk naturally.', day: 1 },
+  { scene: 'Waiting for the Bus', icon: '🚏', desc: 'While waiting for the bus, regulate your breathing, slightly bend your knees, and adopt a Zhan Zhuang relaxed posture — turning "waiting" into an impromptu workout no one notices.', day: 2 },
+  { scene: 'Reading', icon: '📖', desc: 'Observe your posture while reading — gripping the book tightly or hunching your shoulders indicates tension. Hold the book lightly, keep your body upright, and breathe slowly.', day: 3 },
+  { scene: 'Carrying Shopping Bags', icon: '🛍️', desc: 'Do not grip the handles too tightly. Keep your body upright, walk steadily with calm breathing, and accomplish the task with minimal effort.', day: 4 },
+  { scene: 'On the Phone', icon: '📞', desc: 'Notice your sitting posture, breathing, and how hard you grip the phone. Become aware of and release small tensions, easing the stress of modern life.', day: 5 },
+  { scene: 'Writing', icon: '✍️', desc: 'Observe whether you grip the pen tightly or your arm is stiff. Hold the pen with the lightest possible force, keep your breathing steady, and let relaxation carry into all activities.', day: 6 },
+  { scene: 'Computer Work', icon: '💻', desc: 'Keep your body upright, back straight, and shoulders and arms relaxed. Let your fingers move gently on the keyboard. When fatigued, pause for deep breaths or simple warm-ups.', day: 7 },
+  { scene: 'Vacuuming & Housework', icon: '🧹', desc: 'Keep your feet apart for a balanced, upright stance. Use the natural swinging of your shoulders, arms, and wrists to move the vacuum. Do not push or pull forcefully — use minimal effort.', day: 8 },
+  { scene: 'Driving', icon: '🚗', desc: 'Do not grip the steering wheel tightly — hold it with a light touch. Shift gears with minimal force and fluid motion. Sit upright, relax your shoulders, and reduce fatigue on long drives.', day: 9 },
+];
+---
+
+<BaseLayout title="Daily Life Application" sidebar>
+  <CourseSidebar slot="sidebar" active="application" />
+
+  <h1>Daily Life Application: Bringing Zhan Zhuang Principles into Everyday Life</h1>
+  <p>Corresponds to <em>The Way of Energy</em>, Part Four, Chapters 8–10.
+  Zhan Zhuang is not just a practice for a set time each day — its relaxation principles can be integrated into every scenario of daily life.
+  Master Lam demonstrated daily applications in each episode of the BBC documentary.</p>
+
+  <h2>Daily Application Scenarios</h2>
+  <div class="card-grid">
+    {applications.map(a => (
+      <div class="card">
+        <h3>{a.icon} {a.scene}</h3>
+        <p class="card-meta"><span class="tag">Day {a.day}</span></p>
+        <p>{a.desc}</p>
+      </div>
+    ))}
+  </div>
+
+  <h2>Core Principle: Use Minimal Effort</h2>
+  <p>The common thread across all daily applications is: <strong>accomplish tasks with as little energy as possible</strong>.
+  Observe whether you are using excessive force in everyday movements — gripping tightly, hunching your shoulders, going stiff — and then release that unnecessary tension.
+  This is the practice of <em>Sung</em> (relaxation).</p>
+
+  <div class="callout">
+    <h4>Three-Question Self-Check</h4>
+    <p>In any daily activity, ask yourself at any time:</p>
+    <ol>
+      <li>Am I <strong>using too much force</strong>? (Gripping too tightly, pushing too hard)</li>
+      <li>Are my <strong>shoulders</strong> tense and hunched?</li>
+      <li>Is my <strong>breathing</strong> steady and natural?</li>
+    </ol>
+    <p>Once you notice tension, release it and return to a relaxed state.</p>
+  </div>
+
+  ---
+
+  <h2>Lifespan Practice Plan (Ch. 9)</h2>
+  <p>Master Lam provides practice recommendations for different life stages in the book:</p>
+  <table>
+    <tr><th>Stage</th><th>Recommendation</th></tr>
+    <tr><td>Youth</td><td>Can start with the full system, developing strength and endurance</td></tr>
+    <tr><td>Middle Age</td><td>Focus on restoring energy and relieving stress; gradually increase practice time</td></tr>
+    <tr><td>Senior Years</td><td>Primarily practice Wu Chi and Holding the Balloon; sessions can be short, but consistency is key</td></tr>
+    <tr><td>All Stages</td><td>Respect your body's signals; do not skip stages; do not force it</td></tr>
+  </table>
+
+  ---
+
+  <h2>Self-Regulation (Ch. 10)</h2>
+  <p>Zhan Zhuang can serve as a complementary approach for common everyday ailments:</p>
+  <ul class="key-points">
+    <li><strong>Fatigue</strong>: Wu Chi for 5–10 minutes to restore energy</li>
+    <li><strong>Stress / Anxiety</strong>: Holding the Balloon, combined with the "keep smiling" mental focus</li>
+    <li><strong>Sleep Issues</strong>: Practice for 10 minutes before bed to help settle the mind</li>
+    <li><strong>Headaches</strong>: Relax the neck and shoulders; Wu Chi with attention to head suspended</li>
+    <li><strong>Indigestion</strong>: Holding at Dantian, warming and nurturing the abdomen</li>
+  </ul>
+
+  <div class="callout callout-warn">
+    <h4>⚠️ Medical Disclaimer</h4>
+    <p>Zhan Zhuang is not a replacement for medical treatment. If you have chronic conditions, cardiovascular issues, or are taking medication, consult a doctor before beginning practice.
+    If you experience chest pain, shortness of breath, or neurological symptoms during practice, stop immediately and seek medical attention.</p>
+  </div>
+
+  <p style="margin-top: 2rem;">
+    <a href="/reference">→ Reference Area: Posture Library, Cheatsheets, FAQ</a>
+  </p>
+</BaseLayout>

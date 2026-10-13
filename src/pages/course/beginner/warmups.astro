@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CourseSidebar from '../../../components/CourseSidebar.astro';
+
+const warmups = [
+  { name: 'Knee Rotation', cn: '转膝', day: 1, desc: 'Feet together, hands on knees. Rotate knees clockwise and counterclockwise. Releases tension in ankles, knees, and lower back; opens the meridians.', category: 'Warm-up' },
+  { name: 'Swimming on Land', cn: '陆地游泳', day: 2, desc: 'Arms at chest height, circle outward as if swimming through air. Exhale on the outward stroke, inhale on the return. Feel the air resistance with your fingers; relax the body.', category: 'Warm-up' },
+  { name: 'Pushing Up to the Sky', cn: '双手托天', day: 3, desc: 'Inhale and raise hands to the top of the head, exhale and push upward (palms up), hold for one second, inhale and lower. Stretches the body and mobilizes energy.', category: 'Warm-up' },
+  { name: 'Pulling the Bow', cn: '左右开弓似射雕', day: 4, desc: 'Inhale and bring hands to chest height, exhale and pull apart to the sides as if drawing a bow, hold for one second, return and switch sides. Opens the chest and activates energy.', category: 'Warm-up' },
+  { name: 'Splitting the Hands', cn: '双手分掌', day: 5, desc: 'One hand rises, the other presses down. Inhale to center, exhale and split apart upward and downward, hold for one second and switch. Asymmetric stretch that relaxes the sides of the body.', category: 'Warm-up' },
+  { name: 'Turning and Splitting', cn: '转体分掌', day: 6, desc: 'Inhale and cradle a ball at the chest, exhale and turn to the side with both hands pushing outward (palms out), hold for one second and switch. Loosens the spine; experience the opening and closing of energy.', category: 'Warm-up' },
+  { name: 'Side Shaking Exhale', cn: '侧向抖动呼气', day: 7, desc: 'Inhale and raise the right arm, shifting weight right, exhale and bend left with a gentle shake until breath is spent, inhale and rise, switch sides. Side stretch that fully empties stale air.', category: 'Warm-up' },
+  { name: 'Forward Bend Squat', cn: '前俯蹲起', day: 8, desc: 'Inhale and raise both arms to the sides, exhale and bend forward with hands to knees/shins, knees slightly bent with small squats. Mobilizes whole-body blood flow; relaxes the lower back.', category: 'Warm-up' },
+  { name: 'Natural Punching', cn: '自然冲拳', day: 9, desc: 'Feet shoulder-width, knees slightly bent, fists at the waist. Inhale to retract, exhale and punch gently. Releases chest and back tension; prepares for still standing.', category: 'Warm-up' },
+  { name: 'Shaking on the Horse', cn: '背手抖动', day: 10, desc: 'Fists together behind the back at the lower back/kidney area, feet shoulder-width, knees slightly bent. Inhale and bounce up and down as if riding a horse, exhale until breath is spent. Vibrates the kidneys and activates energy.', category: 'Warm-up' },
+];
+
+const cooldowns = [
+  { name: 'Hip Rotation', cn: '转胯', day: '1-5', desc: 'After standing, hands on hips. Rotate the hips clockwise and counterclockwise. Releases tension after prolonged standing.', category: 'Cool-down' },
+  { name: 'Guiding Down', cn: '导引下按', day: '6-10', desc: 'Hands as if holding something, inhale and lift, exhale and slowly press down. Guides the energy generated during practice back into the body and calms the energy system.', category: 'Cool-down' },
+];
+---
+
+<BaseLayout title="Warm-Up Library — Beginner Course" sidebar>
+  <CourseSidebar slot="sidebar" active="beginner-warmups" />
+
+  <h1>Warm-Up & Cool-Down Library</h1>
+  <p>Every practice session must include three stages: <strong>Warm-up → Zhan Zhuang → Cool-down</strong>.
+  Below are all the warm-up and cool-down exercises introduced across the 10 episodes of BBC "Stand Still Be Fit."</p>
+
+  <h2>🔥 Warm-Up Exercises</h2>
+  <p>Warm-ups open the meridians, release body tension, and mobilize energy in preparation for standing practice.
+  Each episode introduces a new warm-up exercise. You can combine them according to your needs.</p>
+
+  <div class="card-grid">
+    {warmups.map(w => (
+      <div class="card">
+        <h3>{w.name} <span style="font-size:0.8rem; color:var(--color-text-muted); font-weight:normal">{w.cn}</span></h3>
+        <p class="card-meta"><span class="tag">Day {w.day}</span> {w.category}</p>
+        <p>{w.desc}</p>
+      </div>
+    ))}
+  </div>
+
+  <h2>🧘 Cool-Down Exercises</h2>
+  <p>Cool-downs guide the energy generated during practice back to its proper place, calm the energy system,
+  and release tension from prolonged standing. <strong>Do not skip.</strong></p>
+
+  <div class="card-grid">
+    {cooldowns.map(c => (
+      <div class="card">
+        <h3>{c.name} <span style="font-size:0.8rem; color:var(--color-text-muted); font-weight:normal">{c.cn}</span></h3>
+        <p class="card-meta"><span class="tag">Day {c.day}</span> {c.category}</p>
+        <p>{c.desc}</p>
+      </div>
+    ))}
+  </div>
+
+  <h2>Recommended Warm-Up Combinations</h2>
+  <table>
+    <tr><th>Practice Stage</th><th>Recommended Warm-Up</th><th>Recommended Cool-Down</th></tr>
+    <tr><td>Early beginner</td><td>Knee Rotation → Swimming on Land</td><td>Hip Rotation</td></tr>
+    <tr><td>Mid-to-late beginner</td><td>Knee Rotation → Pushing Up to the Sky → Pulling the Bow</td><td>Hip Rotation</td></tr>
+    <tr><td>Intermediate stage</td><td>Knee Rotation → Splitting the Hands → Turning and Splitting</td><td>Guiding Down</td></tr>
+    <tr><td>Advanced stage</td><td>Side Shaking → Forward Bend Squat → Natural Punching</td><td>Guiding Down</td></tr>
+    <tr><td>Five-Posture Flow</td><td>Full warm-up set + Shaking on the Horse</td><td>Guiding Down</td></tr>
+  </table>
+
+  <p style="margin-top: 2rem;">
+    <a href="/course/beginner/intro">← Zhan Zhuang Basics</a> &nbsp;|&nbsp;
+    <a href="/postures/wu-chi">Start practicing Wu Chi →</a>
+  </p>
+</BaseLayout>

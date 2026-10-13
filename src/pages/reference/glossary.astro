@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CourseSidebar from '../../components/CourseSidebar.astro';
+
+const terms = [
+  { en: 'Zhan Zhuang', zh: '站桩', py: 'zhàn zhuāng', desc: 'Standing like a tree / standing like a post. A static qigong practice that cultivates internal energy through holding specific standing postures.' },
+  { en: 'Wu Chi', zh: '无极桩', py: 'wú jí zhuāng', desc: 'Posture 1. Wu Chi means formless, undifferentiated, the state before manifestation — the foundation of all postures.' },
+  { en: 'Holding the Balloon', zh: '抱圆桩', py: 'bào yuán zhuāng', desc: 'Posture 2. Both hands embrace an imaginary balloon at heart height.' },
+  { en: 'Holding in Front', zh: '扶按桩', py: 'fú àn zhuāng', desc: 'Posture 3. Both hands extend forward with palms down, as if pressing on floating balls.' },
+  { en: 'Splitting Water', zh: '分水桩', py: 'fēn shuǐ zhuāng', desc: 'Posture 4. Both hands at the sides of the body with palms down, as if parting water.' },
+  { en: 'Holding at Dantian', zh: '抱丹田桩', py: 'bào dān tián zhuāng', desc: 'Posture 5. Both hands embrace a ball in front of the Dantian, warming and nurturing primal energy.' },
+  { en: 'Chi / Qi', zh: '气', py: 'qì', desc: 'Universal life force / vital energy. The core of Zhan Zhuang is cultivating and balancing chi.' },
+  { en: 'Dantian', zh: '丹田', py: 'dān tián', desc: 'The body\'s energy center, located about three fingers-width below the navel. The reservoir where chi accumulates.' },
+  { en: 'Sung', zh: '松', py: 'sōng', desc: 'Relaxation. Not merely muscle looseness, but an overall release and sinking of body and mind.' },
+  { en: 'Mental Focus / Intent', zh: '意念', py: 'yì niàn', desc: 'Intention-led guidance. Using imagination and visualization to enhance the effect of postures.' },
+  { en: 'Sitting-not-sitting', zh: '似坐非坐', py: 'sì zuò fēi zuò', desc: 'The bodily sensation of imagining sitting on a balloon chair — pelvis neutral, center of gravity stable.' },
+  { en: 'Head Suspended', zh: '头顶悬', py: 'tóu dǐng xuán', desc: 'Imagining the head floating above the shoulders, guiding the neck to relax and the spine to lengthen.' },
+  { en: 'Sink Shoulders, Drop Elbows', zh: '沉肩坠肘', py: 'chén jiān zhuì zhǒu', desc: 'Shoulders sink down without hunching; elbows hang naturally.' },
+  { en: 'Tailbone Centered', zh: '尾闾中正', py: 'wěi lǚ zhōng zhèng', desc: 'Neutral pelvic alignment — neither pushing the abdomen out nor sticking the buttocks back.' },
+  { en: 'Yin and Yang', zh: '阴阳', py: 'yīn yáng', desc: 'The unity of opposites in Chinese philosophy. In Zhan Zhuang, stillness is Yin; internal movement is Yang.' },
+  { en: 'Wu Wei (Non-action)', zh: '无为', py: 'wú wéi', desc: 'A core Daoist concept. Outwardly doing nothing, yet inwardly energy transformation is taking place.' },
+  { en: 'Tiao Shen (Regulate Body)', zh: '调身', py: 'tiáo shēn', desc: 'Regulating the body — aligning the skeleton and adopting specific postures.' },
+  { en: 'Tiao Xi (Regulate Breath)', zh: '调息', py: 'tiáo xī', desc: 'Regulating the breath — natural breathing, deep, long, and silent.' },
+  { en: 'Tiao Xin (Regulate Mind)', zh: '调心', py: 'tiáo xīn', desc: 'Regulating the mind — mental focus and visualization, relaxing into stillness.' },
+  { en: 'Shi Li (Testing Strength)', zh: '试力', py: 'shì lì', desc: 'Slowly moving the upper limbs on the foundation of Zhan Zhuang, feeling resistance as if in water. Seeking stillness within movement.' },
+  { en: 'Mo Ca Bu (Friction Step)', zh: '摩擦步', py: 'mó cā bù', desc: 'Lower-body testing strength. Weight shifts between legs; stepping as if wading through mud.' },
+  { en: 'Internal Movement', zh: '内动', py: 'nèi dòng', desc: 'Subtle internal movements that arise within the body while outwardly still during Zhan Zhuang.' },
+  { en: 'Yiquan / Dachengquan', zh: '意拳/大成拳', py: 'yì quán', desc: 'The martial art system founded by Wang Xiangzhai, with Zhan Zhuang as its core training method.' },
+];
+---
+
+<BaseLayout title="Glossary" sidebar>
+  <CourseSidebar slot="sidebar" active="ref-glossary" />
+
+  <h1>Glossary — English / Chinese / Pinyin Reference</h1>
+  <table>
+    <tr><th>English</th><th>Chinese</th><th>Pinyin</th><th>Definition</th></tr>
+    {terms.map(t => (
+      <tr>
+        <td><strong>{t.en}</strong></td>
+        <td>{t.zh}</td>
+        <td style="color:var(--color-text-muted)">{t.py}</td>
+        <td>{t.desc}</td>
+      </tr>
+    ))}
+  </table>
+</BaseLayout>

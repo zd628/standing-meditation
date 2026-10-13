@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CourseSidebar from '../../../components/CourseSidebar.astro';
+---
+
+<BaseLayout title="Mind Maps: Relationships of the 5 Postures" sidebar>
+  <CourseSidebar slot="sidebar" active="intermediate-mindmap" />
+
+  <h1>Mind Maps: Relationships and Progression of the 5 Postures</h1>
+
+  <h2>Posture Progression Path</h2>
+  <div class="mermaid">
+    graph LR
+      A["🧍 Wu Chi<br/>Position 1<br/>Arms hanging down"] --> B["🫂 Holding the Balloon<br/>Position 2<br/>Cradling at heart height"]
+      B --> C["👐 Holding in Front<br/>Position 3<br/>Extended forward, palms down"]
+      C --> D["🌊 Splitting Water<br/>Position 4<br/>At the sides, palms down"]
+      D --> E["🧘 Holding at Dantian<br/>Position 5<br/>Cradling at the Dantian"]
+
+      style A fill:#e8f5d8,stroke:#5b7a3a
+      style B fill:#e8f5d8,stroke:#5b7a3a
+      style C fill:#fff3e0,stroke:#c97b3c
+      style D fill:#fff3e0,stroke:#c97b3c
+      style E fill:#fce4ec,stroke:#a04848
+  </div>
+
+  <h2>Evolution of Energy Direction</h2>
+  <div class="mermaid">
+    graph TD
+      A["Wu Chi: Rooting<br/>Energy downward — like a tree putting down roots"] --> B["Holding the Balloon: Cultivating<br/>Energy cradling — the chi field forms"]
+      B --> C["Holding in Front: Guiding<br/>Energy forward — pressing on floating balls"]
+      C --> D["Splitting Water: Expanding<br/>Energy to both sides — like water parting"]
+      D --> E["Holding at Dantian: Gathering<br/>Energy returns to Dantian — nourishing original chi"]
+      E -->|Cycle| A
+  </div>
+
+  <h2>Body Part Engagement Comparison</h2>
+  <table>
+    <tr><th>Posture</th><th>Legs</th><th>Torso</th><th>Arms</th><th>Hands</th><th>Energy Focus</th></tr>
+    <tr><td>Wu Chi</td><td>★★</td><td>★</td><td>☆</td><td>☆</td><td>Rooting, relaxation</td></tr>
+    <tr><td>Holding the Balloon</td><td>★★</td><td>★</td><td>★★</td><td>★</td><td>Cultivating the chi field</td></tr>
+    <tr><td>Holding in Front</td><td>★★</td><td>★★</td><td>★★</td><td>★</td><td>Guiding energy forward</td></tr>
+    <tr><td>Splitting Water</td><td>★★</td><td>★★</td><td>★★</td><td>★</td><td>Expanding energy outward</td></tr>
+    <tr><td>Holding at Dantian</td><td>★★</td><td>★★★</td><td>★★</td><td>★★</td><td>Gathering and returning to the source</td></tr>
+  </table>
+
+  <h2>Mental Focus Guidance System</h2>
+  <div class="mermaid">
+    mindmap
+      root((Mental Focus))
+        Balloon Chair
+          As if sitting, not sitting
+          Center of gravity stable
+          Pelvis neutral
+        Armpit Balloons
+          Arms slightly propped open
+          Not pressed flat against the body
+          Sink the shoulders, drop the elbows
+        Head Suspended
+          Neck relaxed
+          Spine elongated
+          Chin slightly tucked
+        Cradling a Ball
+          Don't crush it
+          Don't drop it
+          Natural arc
+        Pressing on Balls
+          Balls floating on water
+          Light pressure, don't let them escape
+        Keep Smiling
+          Recall happy thoughts
+          Slight smile at the corners of the mouth
+          Enter the state of sung
+  </div>
+
+  <h2>Daoist Philosophy Thread</h2>
+  <div class="mermaid">
+    graph TD
+      P1["Day 1-2: Wu Wei<br/>Outwardly still, inwardly growing"] --> P2["Day 3-4: Yin & Yang and Chi<br/>Cultivating the life force within stillness"]
+      P2 --> P3["Day 5: Returning to the Root<br/>All things are nourished by the root; return to the root"]
+      P3 --> P4["Day 6: The Power of Trees<br/>Trees are natural energy stations"]
+      P4 --> P5["Day 7: The Highest Good is Like Water<br/>Nothing in the world is softer than water, yet nothing surpasses it in overcoming the hard"]
+      P5 --> P6["Day 8: Inner Stillness<br/>Beneath deep water, there is always stillness"]
+      P6 --> P7["Day 9: Stillness Amidst Noise<br/>Standing alone without changing, revolving without ceasing"]
+      P7 --> P8["Day 10: Power in Stillness<br/>Outwardly eternally still, inwardly endlessly growing"]
+  </div>
+
+  <p style="margin-top: 2rem;">
+    <a href="/course/intermediate/plan">→ Intermediate Practice Plan</a>
+  </p>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+  </script>
+</BaseLayout>

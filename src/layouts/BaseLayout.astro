@@ -1,0 +1,69 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  sidebar?: boolean;
+}
+
+const { title, description = 'Standing Meditation (Zhan Zhuang) — A personal practice guide based on Master Lam Kam-Chuen\'s system', sidebar = false } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title} — Standing Meditation</title>
+  <script is:inline>
+    const theme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <a href="/" class="logo">🌳 Standing Meditation</a>
+    <nav>
+      <a href="/course/beginner">Beginner</a>
+      <a href="/course/intermediate">Intermediate</a>
+      <a href="/course/advanced">Advanced</a>
+      <a href="/application">Daily Life</a>
+      <a href="/reference">Reference</a>
+      <a href="/further-learning">Further Learning</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </nav>
+  </header>
+
+  <div class="layout">
+    {sidebar && (
+      <aside class="sidebar">
+        <slot name="sidebar" />
+      </aside>
+    )}
+    <main class="prose">
+      <slot />
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>Standing Meditation (Zhan Zhuang) · Based on Master Lam Kam-Chuen's system · Personal study guide</p>
+    <p>Sources: <em>The Way of Energy</em> (1991) · Channel 4 <em>Stand Still Be Fit</em> (1995)</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Unofficial educational project. Content is original study notes. Videos embedded via YouTube. Book titles referenced for educational purposes under fair use.</p>
+  </footer>
+
+  <script is:inline>
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      toggle.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    toggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+  </script>
+</body>
+</html>

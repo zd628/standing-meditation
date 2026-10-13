@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CourseSidebar from '../../components/CourseSidebar.astro';
+---
+
+<BaseLayout title="Mind Maps" sidebar>
+  <CourseSidebar slot="sidebar" active="ref-mindmaps" />
+
+  <h1>Mind Maps</h1>
+
+  <h2>Zhan Zhuang System Overview</h2>
+  <div class="mermaid">
+    mindmap
+      root((Zhan Zhuang))
+        5 Postures
+          Wu Chi
+          Holding the Balloon
+          Holding in Front
+          Splitting Water
+          Holding at Dantian
+        Three Regulations
+          Regulate Body Tiao Shen
+          Regulate Breath Tiao Xi
+          Regulate Mind Tiao Xin
+        Each Practice Session
+          Warm-up
+          Zhan Zhuang
+          Cool-down
+        Mental Imagery
+          Balloon chair
+          Armpit balloons
+          Head suspended
+          Embrace / press the balloon
+          Keep smiling
+        Philosophical Foundation
+          Wu Wei non-action yet all is done
+          Yin and Yang and Chi
+          Supreme good is like water
+          Return to the source
+  </div>
+
+  <h2>Master Lam Kam-Chuen's Lineage</h2>
+  <div class="mermaid">
+    graph TD
+      L["Master Lam Kam-Chuen"] -->|studied under| Y["Prof. Yu Yongnian"]
+      Y -->|inherited from| W["Wang Xiangzhai Yiquan / Dachengquan"]
+      W -->|origin| T["Traditional Chinese internal martial arts"]
+      L -->|authored| B["The Way of Energy 1991"]
+      L -->|TV series| V["Stand Still Be Fit 1995 Channel 4"]
+      B -->|system| P["5-posture progressive system"]
+      V -->|demonstrates| P
+  </div>
+
+  <h2>Practice Progression Path</h2>
+  <div class="mermaid">
+    graph LR
+      W1["Week 1<br/>3-5 minutes"] --> W2["Weeks 2-3<br/>5-10 minutes"]
+      W2 --> W4["After Week 4<br/>10-20 minutes"]
+      W4 --> M["Intermediate<br/>Holding Front → Splitting Water"]
+      M --> A["Advanced<br/>Holding at Dantian"]
+      A --> F["Five-Posture Flow<br/>5 minutes each"]
+  </div>
+
+  <h2>10-Episode Documentary Structure</h2>
+  <div class="mermaid">
+    graph TD
+      D1["Day 1: Wu Chi"] --> D2["Day 2: Wu Chi Deepened"]
+      D2 --> D3["Day 3: Holding the Balloon"]
+      D3 --> D4["Day 4: Holding the Balloon Deepened"]
+      D4 --> D5["Day 5: Holding in Front"]
+      D5 --> D6["Day 6: Holding in Front Deepened"]
+      D6 --> D7["Day 7: Splitting Water"]
+      D7 --> D8["Day 8: Splitting Water Deepened"]
+      D8 --> D9["Day 9: Holding at Dantian"]
+      D9 --> D10["Day 10: Summary — Five-Posture Flow"]
+  </div>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+  </script>
+</BaseLayout>

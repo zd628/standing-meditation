@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CourseSidebar from '../../components/CourseSidebar.astro';
+
+const postures = [
+  { num: 1, name: 'Wu Chi', zh: '无极桩', level: 'Beginner', hands: 'Arms hanging naturally at sides', intent: 'Grounding', href: '/postures/wu-chi' },
+  { num: 2, name: 'Holding the Balloon', zh: '抱圆桩', level: 'Beginner', hands: 'Embracing at heart height', intent: 'Cultivating', href: '/postures/holding-balloon' },
+  { num: 3, name: 'Holding in Front', zh: '扶按桩', level: 'Intermediate', hands: 'Extended forward, palms down', intent: 'Guiding', href: '/postures/holding-front' },
+  { num: 4, name: 'Splitting Water', zh: '分水桩', level: 'Intermediate', hands: 'Both sides, palms down', intent: 'Expanding', href: '/postures/splitting-water' },
+  { num: 5, name: 'Holding at Dantian', zh: '抱丹田桩', level: 'Advanced', hands: 'Embracing a ball in front of the Dantian', intent: 'Nurturing', href: '/postures/holding-dantian' },
+];
+---
+
+<BaseLayout title="Posture Library" sidebar>
+  <CourseSidebar slot="sidebar" active="ref-postures" />
+
+  <h1>Posture Library: 5 Postures Quick Reference</h1>
+
+  {postures.map(p => (
+    <div class="card">
+      <h3>
+        <span style="color:var(--color-accent)">{p.num}.</span>
+        {p.name} <span style="font-size:0.85rem;color:var(--color-text-muted);font-weight:normal">{p.zh}</span>
+        <span class={`tag tag-${p.level === 'Beginner' ? 'beginner' : p.level === 'Intermediate' ? 'intermediate' : 'advanced'}`}>{p.level}</span>
+      </h3>
+      <table>
+        <tr><th>Hand Position</th><td>{p.hands}</td></tr>
+        <tr><th>Energy Direction</th><td>{p.intent}</td></tr>
+        <tr><th>Mental Focus</th><td>Balloon chair + armpit balloons + head suspended</td></tr>
+        <tr><th>Breathing</th><td>Inhale and exhale through the nose; natural, deep, long, and silent</td></tr>
+        <tr><th>Body Alignment</th><td>Sitting-not-sitting; do not push chest out or stick buttocks back; do not hunch shoulders</td></tr>
+      </table>
+      <p><a href={p.href}>→ Detailed page</a></p>
+    </div>
+  ))}
+
+  <h2>Universal Essentials (All Postures)</h2>
+  <div class="cheatsheet">
+    <h4>Common Essentials for All Postures</h4>
+    <dl>
+      <dt>Feet</dt><dd>Shoulder-width, toes pointing forward, weight evenly distributed</dd>
+      <dt>Knees</dt><dd>Slightly bent, not extending past toes</dd>
+      <dt>Body</dt><dd>Spine straight, sitting-not-sitting; do not push chest out or stick buttocks back</dd>
+      <dt>Head</dt><dd>Head suspended, gaze forward, chin slightly tucked in</dd>
+      <dt>Breathing</dt><dd>Inhale and exhale through the nose; natural, deep, long, and silent</dd>
+      <dt>Mental Focus</dt><dd>Balloon chair + armpit balloons + head suspended</dd>
+      <dt>Sequence</dt><dd>Warm-up → Zhan Zhuang → Cool-down</dd>
+    </dl>
+  </div>
+</BaseLayout>

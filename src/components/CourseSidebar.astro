@@ -1,0 +1,68 @@
+---
+interface Props {
+  active?: string;
+}
+
+const { active = '' } = Astro.props;
+
+const sections = [
+  {
+    title: 'Beginner',
+    items: [
+      { label: 'Zhan Zhuang Basics', href: '/course/beginner/intro', key: 'beginner-intro' },
+      { label: 'Warm-up Library', href: '/course/beginner/warmups', key: 'beginner-warmups' },
+      { label: 'Wu Chi Pos.1', href: '/postures/wu-chi', key: 'wu-chi', num: 1 },
+      { label: 'Holding Balloon Pos.2', href: '/postures/holding-balloon', key: 'holding-balloon', num: 2 },
+    ],
+  },
+  {
+    title: 'Intermediate',
+    items: [
+      { label: 'Holding Front Pos.3', href: '/postures/holding-front', key: 'holding-front', num: 3 },
+      { label: 'Splitting Water Pos.4', href: '/postures/splitting-water', key: 'splitting-water', num: 4 },
+      { label: 'Mind Maps', href: '/course/intermediate/mindmap', key: 'intermediate-mindmap' },
+      { label: 'Practice Plan', href: '/course/intermediate/plan', key: 'intermediate-plan' },
+    ],
+  },
+  {
+    title: 'Advanced',
+    items: [
+      { label: 'Holding Dantian Pos.5', href: '/postures/holding-dantian', key: 'holding-dantian', num: 5 },
+      { label: 'Five-Posture Flow', href: '/course/advanced/flow', key: 'advanced-flow' },
+      { label: 'Mentality & Intent', href: '/course/advanced/mentality', key: 'advanced-mentality' },
+      { label: 'Practice Plan', href: '/course/advanced/plan', key: 'advanced-plan' },
+    ],
+  },
+  {
+    title: 'Application & Reference',
+    items: [
+      { label: 'Daily Life', href: '/application', key: 'application' },
+      { label: 'Posture Library', href: '/reference/postures', key: 'ref-postures' },
+      { label: 'Cheatsheets', href: '/reference/cheatsheets', key: 'ref-cheatsheets' },
+      { label: 'Mind Maps', href: '/reference/mindmaps', key: 'ref-mindmaps' },
+      { label: 'FAQ', href: '/reference/faq', key: 'ref-faq' },
+      { label: 'Glossary', href: '/reference/glossary', key: 'ref-glossary' },
+    ],
+  },
+  {
+    title: 'Further Learning',
+    items: [
+      { label: 'Resources & Links', href: '/further-learning', key: 'further-learning' },
+    ],
+  },
+];
+---
+
+<nav>
+  {sections.map(section => (
+    <>
+      <div class="nav-section">{section.title}</div>
+      {section.items.map(item => (
+        <a href={item.href} class={active === item.key ? 'active' : ''}>
+          {item.num && <span class="pos-num">{item.num}.</span>}
+          {item.label}
+        </a>
+      ))}
+    </>
+  ))}
+</nav>
