@@ -13,6 +13,7 @@ const { title, description = 'Standing Meditation (Zhan Zhuang) — A personal p
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <base href={import.meta.env.BASE_URL} />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
@@ -24,14 +25,14 @@ const { title, description = 'Standing Meditation (Zhan Zhuang) — A personal p
 </head>
 <body>
   <header class="site-header">
-    <a href="/" class="logo">🌳 Standing Meditation</a>
+    <a href="" class="logo">🌳 Standing Meditation</a>
     <nav>
-      <a href="/course/beginner">Beginner</a>
-      <a href="/course/intermediate">Intermediate</a>
-      <a href="/course/advanced">Advanced</a>
-      <a href="/application">Daily Life</a>
-      <a href="/reference">Reference</a>
-      <a href="/further-learning">Further Learning</a>
+      <a href="course/beginner">Beginner</a>
+      <a href="course/intermediate">Intermediate</a>
+      <a href="course/advanced">Advanced</a>
+      <a href="application">Daily Life</a>
+      <a href="reference">Reference</a>
+      <a href="further-learning">Further Learning</a>
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
     </nav>
   </header>
